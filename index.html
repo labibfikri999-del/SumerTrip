@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Trip Explore - Lombok</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Element: Specific Lombok Island Photo -->
+    <div class="bg-image"
+        style="background-image: url('https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop');">
+    </div>
+
+    <!-- Animated Background Elements -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <!-- PLACEHOLDER FOR SUMMER TRIP LOGO - User should replace src with 'assets/logo.png' -->
+            <img src="assets/LOGO/619805122_17962230627012641_7491754685594051752_n.jpg"
+                onerror="this.src='https://ui-avatars.com/api/?name=Summer+Trip&background=0f172a&color=38bdf8&size=200&font-size=0.33'"
+                alt="Summer Trip Explore" class="profile-img">
+            <h1 class="profile-name">summertrip.explore</h1>
+            <p class="profile-bio">Explore Lombok with Us 🌴<br>Gili Island | Snorkeling | Hidden Gems</p>
+        </div>
+
+        <!-- Social Icons Row -->
+        <div class="social-icons" style="margin-bottom: 0.5rem; display: flex; gap: 1.5rem; justify-content: center;">
+            <a href="https://www.instagram.com/summertrip.explore/" target="_blank"
+                style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/6281946601273" target="_blank" style="color: white; font-size: 1.5rem;"><i
+                    class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="section-title">Why Choose Us?</div>
+        <div class="features-grid">
+            <div class="feature-item"
+                onclick="openModal('Trusted', 'Kami adalah operator resmi dengan pengalaman 5+ tahun melayani ribuan wisatawan di Lombok.')">
+                <i class="fa-solid fa-medal feature-icon"></i>
+                <div class="feature-text">Trusted</div>
+            </div>
+            <div class="feature-item"
+                onclick="openModal('Best Price', 'Harga kami transparan, kompetitif, dan tanpa biaya lewat perantara.')">
+                <i class="fa-solid fa-tags feature-icon"></i>
+                <div class="feature-text">Best Price</div>
+            </div>
+            <div class="feature-item"
+                onclick="openModal('Pro Guide', 'Guide lokal bersertifikat, ramah, dan hapal spot foto terbaik untuk Anda.')">
+                <i class="fa-solid fa-camera feature-icon"></i>
+                <div class="feature-text">Pro Guide</div>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="section-title">Our Packages</div>
+        <div class="links">
+
+            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Three%20Gili%20Tour"
+                class="link-card" target="_blank">
+                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=3488&auto=format&fit=crop"
+                    alt="Three Gili Tour">
+                <div class="link-info">
+                    <div class="link-title">Three Gili Tour (1 Night)</div>
+                    <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
+                            1.700.000</span></div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-icon"></i>
+            </a>
+
+            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Gili%20Sudak"
+                class="link-card" target="_blank">
+                <img src="assets/IMG/gili_sudak.jpg?v=2" alt="Gili Sudak Open Trip">
+                <div class="link-info">
+                    <div class="link-title">Gili Sudak Open Trip (1 Day)</div>
+                    <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
+                            900.000</span> /pax</div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-icon"></i>
+            </a>
+
+            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20tertarik%20Private%20Guided%20Tour"
+                class="link-card" target="_blank">
+                <img src="assets/IMG/private_tour.jpg" alt="Private Tour">
+                <div class="link-info">
+                    <div class="link-title">Private Guided Tour</div>
+                    <div class="link-desc">Exclusive & Detailed</div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-icon"></i>
+            </a>
+
+            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20sewa%20mobil"
+                class="link-card" target="_blank">
+                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Rent Car">
+                <div class="link-info">
+                    <div class="link-title">Rent Car / Transport</div>
+                    <div class="link-desc">Reliable Transport</div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-icon"></i>
+            </a>
+
+        </div>
+
+        <!-- Mini Gallery -->
+        <div class="section-title">Destinations</div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2070&auto=format&fit=crop"
+                    alt="Rinjani">
+                <div class="gallery-caption">Rinjani</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=2070&auto=format&fit=crop"
+                    alt="Pink Beach">
+                <div class="gallery-caption">Pink Beach</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=2070&auto=format&fit=crop"
+                    alt="Kuta Mandalika">
+                <div class="gallery-caption">Mandalika</div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/IMG/sade_village.jpg" alt="Sade Village">
+                <div class="gallery-caption">Sade Village</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Summer Trip Explore &copy; 2026</p>
+        </div>
+    </div>
+
+    <!-- Modals for "Why Choose Us" -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Title</h2>
+            <p id="modal-desc">Description goes here.</p>
+        </div>
+    </div>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281946601273" class="fab-whatsapp" target="_blank" title="Chat with us">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
