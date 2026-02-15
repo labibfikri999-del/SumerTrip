@@ -188,6 +188,7 @@ body {
     margin-bottom: 0.5rem;
     background: linear-gradient(to right, #ffffff, var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     letter-spacing: -0.5px;
@@ -584,4 +585,79 @@ body {
 
 .gallery-item {
     cursor: pointer;
+}
+
+/* Settings Button */
+.settings-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+}
+
+.settings-btn i {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.settings-btn:hover {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+/* Settings Modal Elements */
+.settings-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: white;
+    font-family: var(--font-main);
+}
+
+.settings-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Specific styles for select and file input */
+select.settings-input option {
+    background: var(--secondary-color);
+    color: white;
+}
+
+input[type="file"].settings-input {
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.settings-btn-action {
+    width: 100%;
+    padding: 10px;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.settings-btn-action:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }

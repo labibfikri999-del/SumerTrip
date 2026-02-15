@@ -28,11 +28,14 @@
 
     <div class="container">
         <!-- Profile Section -->
-        <div class="profile">
+        <div class="profile" style="position: relative;">
+            <div class="settings-btn" onclick="openSettings()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <!-- PLACEHOLDER FOR SUMMER TRIP LOGO - User should replace src with 'assets/logo.png' -->
             <img src="assets/LOGO/619805122_17962230627012641_7491754685594051752_n.jpg"
                 onerror="this.src='https://ui-avatars.com/api/?name=Summer+Trip&background=0f172a&color=38bdf8&size=200&font-size=0.33'"
-                alt="Summer Trip Explore" class="profile-img">
+                alt="Summer Trip Explore" class="profile-img" id="profile-image">
             <h1 class="profile-name">summertrip.explore</h1>
             <p class="profile-bio">Explore Lombok with Us 🌴<br>Gili Island | Snorkeling | Hidden Gems</p>
         </div>
@@ -73,7 +76,7 @@
             <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Three%20Gili%20Tour"
                 class="link-card" target="_blank">
                 <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=3488&auto=format&fit=crop"
-                    alt="Three Gili Tour">
+                    alt="Three Gili Tour" id="img-three-gili">
                 <div class="link-info">
                     <div class="link-title">Three Gili Tour (1 Night)</div>
                     <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
@@ -84,7 +87,7 @@
 
             <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Gili%20Sudak"
                 class="link-card" target="_blank">
-                <img src="assets/IMG/gili_sudak.jpg?v=2" alt="Gili Sudak Open Trip">
+                <img src="assets/IMG/gili_sudak.jpg?v=2" alt="Gili Sudak Open Trip" id="img-gili-sudak">
                 <div class="link-info">
                     <div class="link-title">Gili Sudak Open Trip (1 Day)</div>
                     <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
@@ -95,7 +98,7 @@
 
             <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20tertarik%20Private%20Guided%20Tour"
                 class="link-card" target="_blank">
-                <img src="assets/IMG/private_tour.jpg" alt="Private Tour">
+                <img src="assets/IMG/private_tour.jpg" alt="Private Tour" id="img-private-tour">
                 <div class="link-info">
                     <div class="link-title">Private Guided Tour</div>
                     <div class="link-desc">Exclusive & Detailed</div>
@@ -106,7 +109,7 @@
             <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20sewa%20mobil"
                 class="link-card" target="_blank">
                 <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
-                    alt="Rent Car">
+                    alt="Rent Car" id="img-rent-car">
                 <div class="link-info">
                     <div class="link-title">Rent Car / Transport</div>
                     <div class="link-desc">Reliable Transport</div>
@@ -121,21 +124,21 @@
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2070&auto=format&fit=crop"
-                    alt="Rinjani">
+                    alt="Rinjani" id="img-gallery-rinjani">
                 <div class="gallery-caption">Rinjani</div>
             </div>
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=2070&auto=format&fit=crop"
-                    alt="Pink Beach">
+                    alt="Pink Beach" id="img-gallery-pink-beach">
                 <div class="gallery-caption">Pink Beach</div>
             </div>
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=2070&auto=format&fit=crop"
-                    alt="Kuta Mandalika">
+                    alt="Kuta Mandalika" id="img-gallery-mandalika">
                 <div class="gallery-caption">Mandalika</div>
             </div>
             <div class="gallery-item">
-                <img src="assets/IMG/sade_village.jpg" alt="Sade Village">
+                <img src="assets/IMG/sade_village.jpg" alt="Sade Village" id="img-gallery-sade">
                 <div class="gallery-caption">Sade Village</div>
             </div>
         </div>
@@ -159,6 +162,43 @@
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
         <div id="caption"></div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSettings()">&times;</span>
+            <h2 id="settings-title">Settings</h2>
+
+            <!-- Step 1: Password -->
+            <div id="step-password">
+                <p>Enter password to change settings:</p>
+                <input type="password" id="settings-password" class="settings-input" placeholder="Password">
+                <button class="settings-btn-action" onclick="checkPassword()">Login</button>
+                <p id="password-error" style="color: red; display: none; margin-top: 5px;">Incorrect Password!</p>
+            </div>
+
+            <!-- Step 2: Change Photo (Refactored for Multi-Image) -->
+            <div id="step-change-photo" style="display: none;">
+                <p>Select image to change:</p>
+                <select id="image-selector" class="settings-input">
+                    <!-- Options populated by JS -->
+                </select>
+
+                <p style="margin-top: 10px;">Upload new image:</p>
+                <input type="file" id="file-upload-input" class="settings-input" accept="image/*">
+
+                <div id="preview-container" style="margin: 10px 0; display: none;">
+                    <p style="font-size: 0.8rem; margin-bottom: 5px;">Preview:</p>
+                    <img id="image-preview" src=""
+                        style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid white;">
+                </div>
+
+                <button class="settings-btn-action" onclick="saveNewPhoto()">Save Photo</button>
+                <button class="settings-btn-action" onclick="resetSelectedPhoto()"
+                    style="background: #ef4444; margin-top: 10px;">Reset Selected</button>
+            </div>
+        </div>
     </div>
 
     <!-- Floating WhatsApp Button -->
