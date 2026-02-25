@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summer Trip Explore - Lombok</title>
+    <meta name="description"
+        content="Explore Lombok with Summer Trip. Professional tour guide, best prices, Gili Island snorkeling, and hidden gems.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
+    <meta property="og:title" content="Summer Trip Explore - Lombok">
+    <meta property="og:description"
+        content="Explore Lombok with Summer Trip. Professional tour guide, best prices, Gili Island snorkeling, and hidden gems.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +26,7 @@
 <body>
 
     <!-- Background Element: Specific Lombok Island Photo -->
-    <div class="bg-image"
+    <div class="bg-image" id="main-bg"
         style="background-image: url('https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop');">
     </div>
 
@@ -71,10 +80,18 @@
 
         <!-- Links Section -->
         <div class="section-title">Our Packages</div>
-        <div class="links">
 
-            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Three%20Gili%20Tour"
-                class="link-card" target="_blank">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="package-search" class="search-input"
+                placeholder="Search destinations (e.g., Gili)&#8230;">
+        </div>
+
+        <div class="links" id="links-container">
+
+            <a href="#" onclick="bookPackage('Three Gili Tour (1 Night)', 'IDR 1.700.000'); return false;"
+                class="link-card">
                 <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=3488&auto=format&fit=crop"
                     alt="Three Gili Tour" id="img-three-gili">
                 <div class="link-info">
@@ -85,8 +102,8 @@
                 <i class="fa-solid fa-chevron-right link-icon"></i>
             </a>
 
-            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20tanya%20paket%20Gili%20Sudak"
-                class="link-card" target="_blank">
+            <a href="#" onclick="bookPackage('Gili Sudak Open Trip (1 Day)', 'IDR 900.000 /pax'); return false;"
+                class="link-card">
                 <img src="assets/IMG/gili_sudak.jpg?v=2" alt="Gili Sudak Open Trip" id="img-gili-sudak">
                 <div class="link-info">
                     <div class="link-title">Gili Sudak Open Trip (1 Day)</div>
@@ -96,8 +113,7 @@
                 <i class="fa-solid fa-chevron-right link-icon"></i>
             </a>
 
-            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20tertarik%20Private%20Guided%20Tour"
-                class="link-card" target="_blank">
+            <a href="#" onclick="bookPackage('Private Guided Tour', 'Custom Price'); return false;" class="link-card">
                 <img src="assets/IMG/private_tour.jpg" alt="Private Tour" id="img-private-tour">
                 <div class="link-info">
                     <div class="link-title">Private Guided Tour</div>
@@ -106,8 +122,8 @@
                 <i class="fa-solid fa-chevron-right link-icon"></i>
             </a>
 
-            <a href="https://wa.me/6281946601273?text=Halo%20Summer%20Trip,%20saya%20mau%20sewa%20mobil"
-                class="link-card" target="_blank">
+            <a href="#" onclick="bookPackage('Rent Car / Transport', 'Varies by Vehicle'); return false;"
+                class="link-card">
                 <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
                     alt="Rent Car" id="img-rent-car">
                 <div class="link-info">
@@ -124,21 +140,21 @@
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2070&auto=format&fit=crop"
-                    alt="Rinjani" id="img-gallery-rinjani">
+                    alt="Rinjani" id="img-gallery-rinjani" loading="lazy">
                 <div class="gallery-caption">Rinjani</div>
             </div>
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=2070&auto=format&fit=crop"
-                    alt="Pink Beach" id="img-gallery-pink-beach">
+                    alt="Pink Beach" id="img-gallery-pink-beach" loading="lazy">
                 <div class="gallery-caption">Pink Beach</div>
             </div>
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=2070&auto=format&fit=crop"
-                    alt="Kuta Mandalika" id="img-gallery-mandalika">
+                    alt="Kuta Mandalika" id="img-gallery-mandalika" loading="lazy">
                 <div class="gallery-caption">Mandalika</div>
             </div>
             <div class="gallery-item">
-                <img src="assets/IMG/sade_village.jpg" alt="Sade Village" id="img-gallery-sade">
+                <img src="assets/IMG/sade_village.jpg" alt="Sade Village" id="img-gallery-sade" loading="lazy">
                 <div class="gallery-caption">Sade Village</div>
             </div>
         </div>
@@ -178,25 +194,40 @@
                 <p id="password-error" style="color: red; display: none; margin-top: 5px;">Incorrect Password!</p>
             </div>
 
-            <!-- Step 2: Change Photo (Refactored for Multi-Image) -->
+            <!-- Step 2: Image Manager -->
             <div id="step-change-photo" style="display: none;">
-                <p>Select image to change:</p>
-                <select id="image-selector" class="settings-input">
-                    <!-- Options populated by JS -->
-                </select>
+                <p style="margin-bottom: 15px; font-size: 0.9rem; color: #cbd5e1; text-align: left;">Click an item to
+                    change its image, or reset it.</p>
 
-                <p style="margin-top: 10px;">Upload new image:</p>
-                <input type="file" id="file-upload-input" class="settings-input" accept="image/*">
-
-                <div id="preview-container" style="margin: 10px 0; display: none;">
-                    <p style="font-size: 0.8rem; margin-bottom: 5px;">Preview:</p>
-                    <img id="image-preview" src=""
-                        style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid white;">
+                <div id="image-manager-list" class="image-manager-list">
+                    <!-- Populated by JS -->
                 </div>
 
-                <button class="settings-btn-action" onclick="saveNewPhoto()">Save Photo</button>
-                <button class="settings-btn-action" onclick="resetSelectedPhoto()"
-                    style="background: #ef4444; margin-top: 10px;">Reset Selected</button>
+                <!-- Hidden file input for handling generic uploads -->
+                <input type="file" id="global-file-input" style="display: none;" accept="image/*">
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i id="toast-icon" class="fa-solid fa-circle-check toast-icon"></i>
+        <div id="toast-message">Message goes here</div>
+    </div>
+
+    <!-- Custom Confirm Modal -->
+    <div id="confirm-modal" class="modal-overlay">
+        <div class="modal-content confirm-box" style="max-width: 320px;">
+            <div style="font-size: 3rem; color: #ef4444; margin-bottom: 10px;">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <h2 id="confirm-title" style="margin-bottom: 5px;">Konfirmasi</h2>
+            <p id="confirm-desc" style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 20px;">Apakah Anda yakin?</p>
+            <div class="confirm-actions" style="display: flex; gap: 10px;">
+                <button id="btn-confirm-cancel" class="settings-btn-action"
+                    style="background: rgba(255,255,255,0.1); color: white;">Batal</button>
+                <button id="btn-confirm-ok" class="settings-btn-action" style="background: #ef4444; color: white;">Ya,
+                    Reset</button>
             </div>
         </div>
     </div>
@@ -205,6 +236,11 @@
     <a href="https://wa.me/6281946601273" class="fab-whatsapp" target="_blank" title="Chat with us">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
