@@ -1,248 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Trip Explore - Lombok</title>
-    <meta name="description"
-        content="Explore Lombok with Summer Trip. Professional tour guide, best prices, Gili Island snorkeling, and hidden gems.">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
-    <meta property="og:title" content="Summer Trip Explore - Lombok">
-    <meta property="og:description"
-        content="Explore Lombok with Summer Trip. Professional tour guide, best prices, Gili Island snorkeling, and hidden gems.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop">
+    <title>SummerTrip Explore - Experience the Real Lombok with Local Experts</title>
+    <meta name="description" content="Skip the tourist traps. Join Lombok's most trusted local team for effortless adventures, hidden snorkeling spots, and authentic island experiences.">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Background Element: Specific Lombok Island Photo -->
-    <div class="bg-image" id="main-bg"
-        style="background-image: url('https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop');">
-    </div>
-
-    <!-- Animated Background Elements -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-    <div class="container">
-        <!-- Profile Section -->
-        <div class="profile" style="position: relative;">
-            <div class="settings-btn" onclick="openSettings()">
-                <i class="fa-solid fa-bars"></i>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SummerTrip<span>Explore</span></div>
+            <div class="nav-links">
+                <a href="https://wa.me/6281946601273" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Chat with Us
+                </a>
             </div>
-            <!-- PLACEHOLDER FOR SUMMER TRIP LOGO - User should replace src with 'assets/logo.png' -->
-            <img src="assets/LOGO/619805122_17962230627012641_7491754685594051752_n.jpg"
-                onerror="this.src='https://ui-avatars.com/api/?name=Summer+Trip&background=0f172a&color=38bdf8&size=200&font-size=0.33'"
-                alt="Summer Trip Explore" class="profile-img" id="profile-image">
-            <h1 class="profile-name">summertrip.explore</h1>
-            <p class="profile-bio">Explore Lombok with Us 🌴<br>Gili Island | Snorkeling | Hidden Gems</p>
         </div>
+    </nav>
 
-        <!-- Social Icons Row -->
-        <div class="social-icons" style="margin-bottom: 0.5rem; display: flex; gap: 1.5rem; justify-content: center;">
-            <a href="https://www.instagram.com/summertrip.explore/" target="_blank"
-                style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://wa.me/6281946601273" target="_blank" style="color: white; font-size: 1.5rem;"><i
-                    class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" style="color: white; font-size: 1.5rem;"><i class="fa-brands fa-tiktok"></i></a>
+    <!-- Hero Section -->
+    <header class="hero" id="home" style="background-image: url('assets/img/hero.png');">
+        <div class="hero-content">
+            <h1 class="text-gradient">Explore Lombok with Local Experts</h1>
+            <p>Skip the tourist traps. Join our island insiders for effortless adventures, hidden snorkeling spots, and authentic cultural moments you won't find on a map.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/6281946601273" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+                </a>
+                <a href="#packages" class="btn btn-secondary">Explore Packages</a>
+            </div>
         </div>
+    </header>
 
-        <!-- Why Choose Us -->
-        <div class="section-title">Why Choose Us?</div>
+    <!-- Trust Markers -->
+    <section class="section" id="why-us">
+        <div class="section-header">
+            <h2>Why Travelers Trust Us</h2>
+            <p>We don't just provide tours—we provide authentic island connections.</p>
+        </div>
         <div class="features-grid">
-            <div class="feature-item"
-                onclick="openModal('Trusted', 'Kami adalah operator resmi dengan pengalaman 5+ tahun melayani ribuan wisatawan di Lombok.')">
-                <i class="fa-solid fa-medal feature-icon"></i>
-                <div class="feature-text">Trusted</div>
+            <div class="feature-card">
+                <i class="fa-solid fa-star feature-icon"></i>
+                <h3>1,000+ Happy Guests</h3>
+                <p>Over 1,000 global travelers have trusted us to show them the true heart of Lombok.</p>
             </div>
-            <div class="feature-item"
-                onclick="openModal('Best Price', 'Harga kami transparan, kompetitif, dan tanpa biaya lewat perantara.')">
-                <i class="fa-solid fa-tags feature-icon"></i>
-                <div class="feature-text">Best Price</div>
+            <div class="feature-card">
+                <i class="fa-solid fa-handshake feature-icon"></i>
+                <h3>No Middlemen Pricing</h3>
+                <p>Book directly with the local team for affordable, transparent, and fair "local-first" pricing.</p>
             </div>
-            <div class="feature-item"
-                onclick="openModal('Pro Guide', 'Guide lokal bersertifikat, ramah, dan hapal spot foto terbaik untuk Anda.')">
-                <i class="fa-solid fa-camera feature-icon"></i>
-                <div class="feature-text">Pro Guide</div>
+            <div class="feature-card">
+                <i class="fa-solid fa-location-dot feature-icon"></i>
+                <h3>Insider Local Knowledge</h3>
+                <p>Our guides are Lombok natives who know the island's best-kept secrets and hidden gems.</p>
             </div>
         </div>
+    </section>
 
-        <!-- Links Section -->
-        <div class="section-title">Our Packages</div>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="package-search" class="search-input"
-                placeholder="Search destinations (e.g., Gili)&#8230;">
+    <!-- Packages Section -->
+    <section class="section" id="packages">
+        <div class="section-header">
+            <h2>Handpicked Island Programs</h2>
+            <p>Curated by locals to ensure you experience the very best of our beautiful island home.</p>
         </div>
-
-        <div class="links" id="links-container">
-
-            <a href="#" onclick="bookPackage('Three Gili Tour (1 Night)', 'IDR 1.700.000'); return false;"
-                class="link-card">
-                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=3488&auto=format&fit=crop"
-                    alt="Three Gili Tour" id="img-three-gili">
-                <div class="link-info">
-                    <div class="link-title">Three Gili Tour (1 Night)</div>
-                    <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
-                            1.700.000</span></div>
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <img src="assets/img/three_gili.png" alt="Three Gili Tour" class="package-img">
+                <div class="package-content">
+                    <div class="package-meta">
+                        <span class="duration"><i class="fa-regular fa-clock"></i> 2 Days 1 Night</span>
+                        <span class="price">From IDR 1.7M</span>
+                    </div>
+                    <h3>The Ultimate Three Gili Tour</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">DIVE INTO PARADISE. Discover the clearest waters, swim with turtles, and explore iconic underwater statues across Gili T, Meno, and Air.</p>
+                    <ul class="package-highlights">
+                        <li><i class="fa-solid fa-check"></i> Turtle Sanctuary & Statue visits</li>
+                        <li><i class="fa-solid fa-check"></i> Premium snorkeling equipment</li>
+                        <li><i class="fa-solid fa-check"></i> Private boat option available</li>
+                        <li><i class="fa-solid fa-check"></i> Sunset beachfront dinner</li>
+                    </ul>
+                    <a href="#" onclick="bookPackage('Three Gili Tour (The Ultimate)', 'IDR 1.700.000'); return false;" class="btn btn-primary">
+                        Check Availability
+                    </a>
                 </div>
-                <i class="fa-solid fa-chevron-right link-icon"></i>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card">
+                <img src="assets/img/gili_sudak.png" alt="Gili Sudak Open Trip" class="package-img">
+                <div class="package-content">
+                    <div class="package-meta">
+                        <span class="duration"><i class="fa-regular fa-clock"></i> Full Day</span>
+                        <span class="price">From IDR 900k</span>
+                    </div>
+                    <h3>Lombok's Secret Island Trip</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">ESCAPE THE CROWDS. Discover pristine sandbars, crystal lagoons, and the untouched beauty of Gili Kedis, Nanggu, and Sudak.</p>
+                    <ul class="package-highlights">
+                        <li><i class="fa-solid fa-check"></i> Visit 3 secret "Secret Gili" islands</li>
+                        <li><i class="fa-solid fa-check"></i> Traditional island lunch included</li>
+                        <li><i class="fa-solid fa-check"></i> Small, social group atmosphere</li>
+                        <li><i class="fa-solid fa-check"></i> Perfect for photographers & couples</li>
+                    </ul>
+                    <a href="#" onclick="bookPackage('Secret Island Gili Sudak Trip', 'IDR 900.000'); return false;" class="btn btn-primary">
+                        Join Open Trip
+                    </a>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <img src="assets/img/private_tour.png" alt="Private Guided Tour" class="package-img">
+                <div class="package-content">
+                    <div class="package-meta">
+                        <span class="duration"><i class="fa-regular fa-clock"></i> Customizable</span>
+                        <span class="price">Tailored</span>
+                    </div>
+                    <h3>Private "Your Way" Tour</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">TOTAL EXCLUSIVITY. From majestic twin waterfalls to ancient Sasak villages, we'll craft a private day trip exactly to your pace.</p>
+                    <ul class="package-highlights">
+                        <li><i class="fa-solid fa-check"></i> 100% Flexible itinerary selection</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated private driver & guide</li>
+                        <li><i class="fa-solid fa-check"></i> Local culinary stops included</li>
+                        <li><i class="fa-solid fa-check"></i> Authentic, non-touristy experiences</li>
+                    </ul>
+                    <a href="#" onclick="bookPackage('Private Customizable Tour', 'Custom'); return false;" class="btn btn-primary">
+                        Build My Itinerary
+                    </a>
+                </div>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="package-card">
+                <img src="assets/img/rent_car.png" alt="Rent Car" class="package-img">
+                <div class="package-content">
+                    <div class="package-meta">
+                        <span class="duration"><i class="fa-solid fa-car"></i> Daily/Weekly</span>
+                        <span class="price">Reliable</span>
+                    </div>
+                    <h3>Seamless Freedom Rentals</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">ZERO STRESS EXPLORATION. Discover Lombok at your own pace with our fleet of clean, modern SUVs and professional drivers.</p>
+                    <ul class="package-highlights">
+                        <li><i class="fa-solid fa-check"></i> Modern SUV & Minivan fleet</li>
+                        <li><i class="fa-solid fa-check"></i> Flat-rate Airport transfers</li>
+                        <li><i class="fa-solid fa-check"></i> With driver or Self-drive options</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Roadside support included</li>
+                    </ul>
+                    <a href="#" onclick="bookPackage('Rent Car / Transport Service', 'Varies'); return false;" class="btn btn-primary">
+                        Rent a Car Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-header">
+            <h2>Moments Worth Sharing</h2>
+            <p>Real captures from recent adventures with our amazing travelers.</p>
+        </div>
+        <div class="gallery-grid-new">
+            <div class="gallery-item-new">
+                <img src="assets/img/gallery_pink_beach.png" alt="Pink Beach">
+                <div class="gallery-overlay"><span>Pristine Pink Beach</span></div>
+            </div>
+            <div class="gallery-item-new">
+                <img src="assets/img/gallery_mandalika.png" alt="Mandalika Surfing">
+                <div class="gallery-overlay"><span>Mandalika Surf Break</span></div>
+            </div>
+            <div class="gallery-item-new">
+                <img src="assets/img/three_gili.png" alt="Three Gili Snorkeling">
+                <div class="gallery-overlay"><span>Gili Snorkeling Magic</span></div>
+            </div>
+            <div class="gallery-item-new">
+                <img src="assets/img/hero.png" alt="Lombok Sunset">
+                <div class="gallery-overlay"><span>Tropical Sunset Vibes</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Preview -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Detailed Day Plans</h2>
+            <p>Transparency from morning until sunset. Here's how your day will look.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Three Gili "Total Snorkel" Day Plan</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>08:30:</strong> Fast boat departure from Teluk Nare/Bangsal.<br>
+                       <strong>09:15:</strong> Dive into Gili Meno (Turtle Point & Underwater Statues).<br>
+                       <strong>11:45:</strong> Authentic island-style lunch at Gili Air shore.<br>
+                       <strong>13:30:</strong> Bicycle exploring or beach relaxation at Gili Trawangan.<br>
+                       <strong>16:30:</strong> Smooth return transfer to your hotel.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>"Authentic Lombok" Cultural Day</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>09:00:</strong> Direct pick-up from your hotel.<br>
+                       <strong>10:30:</strong> Walk through Sade Village (Living Sasak Culture).<br>
+                       <strong>12:30:</strong> Local Sasak lunch favorites in Kuta Lombok.<br>
+                       <strong>14:30:</strong> Crystal waters & relaxation at Tanjung Aan Beach.<br>
+                       <strong>16:30:</strong> 360&deg; panoramic sunset view at Merese Hill.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="section-header">
+            <h2>Words from Our Travelers</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Best experience ever! The local guide knew exactly where the turtles hide and took us to spots without other boats. A must-do!"</p>
+                <div class="reviewer-info">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+J&background=random" alt="Sarah" class="reviewer-img">
+                    <div>
+                        <strong>Sarah Johnson</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">From Australia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"Super professional car service. Driver was polite and the car was spotless. Far better than the generic hotel transfers."</p>
+                <div class="reviewer-info">
+                    <img src="https://ui-avatars.com/api/?name=David+L&background=random" alt="David" class="reviewer-img">
+                    <div>
+                        <strong>David Leong</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">From Singapore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>"If you want to see the 'Real' Lombok, these are the people you call. No tourist traps, just pure authenticity."</p>
+                <div class="reviewer-info">
+                    <img src="https://ui-avatars.com/api/?name=Elena+M&background=random" alt="Elena" class="reviewer-img">
+                    <div>
+                        <strong>Elena Müller</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">From Germany</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Where and when do we meet?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Standard Gili tour meeting points are Teluk Nare or Bangsal Harbor. However, for maximum comfort, we offer door-to-door hotel pick-ups across Kuta, Senggigi, and Mataram.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>How do I confirm my booking?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>It's simple. Chat with us on WhatsApp, share your dates, and we'll send you an instant confirmation. No long forms or advanced account creations needed.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>What is your 100% Safety Guarantee?</h3>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Your safety is non-negotiable. If weather or sea conditions aren't perfect, we will reschedule or offer a full 100% refund. We never compromise on safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-bottom">
+        <div class="container">
+            <h2>Ready to see the *real* Lombok?</h2>
+            <p style="margin-bottom: 40px; font-size: 1.25rem; opacity: 0.9;">Don't just visit—experience it. Tap below to start planning your perfect island getaway with a local expert.</p>
+            <a href="https://wa.me/6281946601273" class="btn btn-whatsapp" style="padding: 18px 45px; font-size: 1.2rem;">
+                <i class="fa-brands fa-whatsapp"></i> Start Your Journey (Chat Now)
             </a>
-
-            <a href="#" onclick="bookPackage('Gili Sudak Open Trip (1 Day)', 'IDR 900.000 /pax'); return false;"
-                class="link-card">
-                <img src="assets/IMG/gili_sudak.jpg?v=2" alt="Gili Sudak Open Trip" id="img-gili-sudak">
-                <div class="link-info">
-                    <div class="link-title">Gili Sudak Open Trip (1 Day)</div>
-                    <div class="link-desc">All-in: <span style="color: var(--accent-color); font-weight: bold;">IDR
-                            900.000</span> /pax</div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-icon"></i>
-            </a>
-
-            <a href="#" onclick="bookPackage('Private Guided Tour', 'Custom Price'); return false;" class="link-card">
-                <img src="assets/IMG/private_tour.jpg" alt="Private Tour" id="img-private-tour">
-                <div class="link-info">
-                    <div class="link-title">Private Guided Tour</div>
-                    <div class="link-desc">Exclusive & Detailed</div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-icon"></i>
-            </a>
-
-            <a href="#" onclick="bookPackage('Rent Car / Transport', 'Varies by Vehicle'); return false;"
-                class="link-card">
-                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
-                    alt="Rent Car" id="img-rent-car">
-                <div class="link-info">
-                    <div class="link-title">Rent Car / Transport</div>
-                    <div class="link-desc">Reliable Transport</div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-icon"></i>
-            </a>
-
         </div>
+    </section>
 
-        <!-- Mini Gallery -->
-        <div class="section-title">Destinations</div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2070&auto=format&fit=crop"
-                    alt="Rinjani" id="img-gallery-rinjani" loading="lazy">
-                <div class="gallery-caption">Rinjani</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=2070&auto=format&fit=crop"
-                    alt="Pink Beach" id="img-gallery-pink-beach" loading="lazy">
-                <div class="gallery-caption">Pink Beach</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=2070&auto=format&fit=crop"
-                    alt="Kuta Mandalika" id="img-gallery-mandalika" loading="lazy">
-                <div class="gallery-caption">Mandalika</div>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/IMG/sade_village.jpg" alt="Sade Village" id="img-gallery-sade" loading="lazy">
-                <div class="gallery-caption">Sade Village</div>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SummerTrip Explore Lombok. All rights reserved.</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">The island's most trusted local host network.</p>
         </div>
-
-        <div class="footer">
-            <p>Summer Trip Explore &copy; 2026</p>
-        </div>
-    </div>
-
-    <!-- Modals for "Why Choose Us" -->
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 id="modal-title">Title</h2>
-            <p id="modal-desc">Description goes here.</p>
-        </div>
-    </div>
-
-    <!-- Lightbox for Gallery -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div id="caption"></div>
-    </div>
-
-    <!-- Settings Modal -->
-    <div id="settings-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeSettings()">&times;</span>
-            <h2 id="settings-title">Settings</h2>
-
-            <!-- Step 1: Password -->
-            <div id="step-password">
-                <p>Enter password to change settings:</p>
-                <input type="password" id="settings-password" class="settings-input" placeholder="Password">
-                <button class="settings-btn-action" onclick="checkPassword()">Login</button>
-                <p id="password-error" style="color: red; display: none; margin-top: 5px;">Incorrect Password!</p>
-            </div>
-
-            <!-- Step 2: Image Manager -->
-            <div id="step-change-photo" style="display: none;">
-                <p style="margin-bottom: 15px; font-size: 0.9rem; color: #cbd5e1; text-align: left;">Click an item to
-                    change its image, or reset it.</p>
-
-                <div id="image-manager-list" class="image-manager-list">
-                    <!-- Populated by JS -->
-                </div>
-
-                <!-- Hidden file input for handling generic uploads -->
-                <input type="file" id="global-file-input" style="display: none;" accept="image/*">
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <i id="toast-icon" class="fa-solid fa-circle-check toast-icon"></i>
-        <div id="toast-message">Message goes here</div>
-    </div>
-
-    <!-- Custom Confirm Modal -->
-    <div id="confirm-modal" class="modal-overlay">
-        <div class="modal-content confirm-box" style="max-width: 320px;">
-            <div style="font-size: 3rem; color: #ef4444; margin-bottom: 10px;">
-                <i class="fa-solid fa-circle-exclamation"></i>
-            </div>
-            <h2 id="confirm-title" style="margin-bottom: 5px;">Konfirmasi</h2>
-            <p id="confirm-desc" style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 20px;">Apakah Anda yakin?</p>
-            <div class="confirm-actions" style="display: flex; gap: 10px;">
-                <button id="btn-confirm-cancel" class="settings-btn-action"
-                    style="background: rgba(255,255,255,0.1); color: white;">Batal</button>
-                <button id="btn-confirm-ok" class="settings-btn-action" style="background: #ef4444; color: white;">Ya,
-                    Reset</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6281946601273" class="fab-whatsapp" target="_blank" title="Chat with us">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" title="Go to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
