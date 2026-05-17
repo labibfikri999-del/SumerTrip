@@ -60,16 +60,16 @@ export function Hero({ slides, whatsappHref }: HeroProps) {
       <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-8 sm:py-5 lg:px-10">
         <a
           href="#home"
-          className="flex h-14 w-[154px] items-center overflow-hidden rounded-[1.2rem] border border-white/18 bg-white/92 px-2 shadow-xl shadow-black/12 backdrop-blur-md transition hover:bg-white sm:h-16 sm:w-[190px] sm:px-3"
+          className="flex h-14 w-[150px] items-center transition hover:opacity-90 sm:h-16 sm:w-[188px]"
           aria-label="Summer Trip"
         >
           <Image
-            src="/images/summer-trip-logo.svg"
+            src="/images/summer-trip-logo-white.svg"
             alt="Summer Trip"
-            width={680}
-            height={260}
+            width={380}
+            height={150}
             priority
-            className="h-auto w-[122%] max-w-none"
+            className="h-auto w-full drop-shadow-[0_4px_14px_rgba(0,0,0,0.45)]"
           />
         </a>
 

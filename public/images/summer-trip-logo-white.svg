@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" role="img" aria-labelledby="title desc">
+  <title id="title">Summer Trip Logo White</title>
+  <desc id="desc">White Summer Trip wordmark with blue sun accent.</desc>
+  <g fill="#ffffff">
+    <text
+      x="8"
+      y="70"
+      font-family="Cooper Black, Arial Rounded MT Bold, Arial Black, sans-serif"
+      font-size="68"
+      font-weight="900"
+      letter-spacing="-5"
+      transform="rotate(-2 190 54)"
+    >
+      Summer
+    </text>
+    <text
+      x="110"
+      y="135"
+      font-family="Arial Rounded MT Bold, Arial Black, Impact, sans-serif"
+      font-size="62"
+      font-weight="900"
+      letter-spacing="8"
+      transform="rotate(-6 210 111)"
+    >
+      TRIP
+    </text>
+  </g>
+  <g transform="translate(223 83)">
+    <circle r="13" fill="rgba(255,255,255,0.92)" stroke="#49c7ff" stroke-width="5"/>
+    <circle cx="-5" cy="-2" r="2.4" fill="#1195cf"/>
+    <circle cx="5" cy="-2" r="2.4" fill="#1195cf"/>
+    <path d="M-4 6c4 3 9 3 13 0" fill="none" stroke="#1195cf" stroke-width="3" stroke-linecap="round"/>
+    <g stroke="#49c7ff" stroke-width="3.2" stroke-linecap="round">
+      <path d="M0 -24v-11"/>
+      <path d="M0 24v11"/>
+      <path d="M-24 0h-11"/>
+      <path d="M24 0h11"/>
+      <path d="M-17 -17l-8 -8"/>
+      <path d="M17 -17l8 -8"/>
+      <path d="M-17 17l-8 8"/>
+      <path d="M17 17l8 8"/>
+      <path d="M-9 -22l-5 -10"/>
+      <path d="M9 -22l5 -10"/>
+      <path d="M-9 22l-5 10"/>
+      <path d="M9 22l5 10"/>
+      <path d="M-22 -9l-10 -5"/>
+      <path d="M22 -9l10 -5"/>
+      <path d="M-22 9l-10 5"/>
+      <path d="M22 9l10 5"/>
+    </g>
+  </g>
+</svg>
