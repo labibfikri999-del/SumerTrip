@@ -20,7 +20,7 @@ export default function Home() {
   const bookingHref = whatsappUrl()
 
   return (
-    <main className="overflow-x-hidden bg-[#F8F5EF]">
+    <main className="overflow-x-hidden bg-[#F8F5EF] pb-20 md:pb-0">
       <Hero slides={heroSlides} whatsappHref={bookingHref} />
       <DestinationCarousel destinations={destinations} />
       <PackagesSection packages={packages} />

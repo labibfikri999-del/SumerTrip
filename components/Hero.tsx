@@ -42,7 +42,7 @@ export function Hero({ slides, whatsappHref }: HeroProps) {
   }, [active])
 
   return (
-    <section ref={shellRef} className="relative min-h-screen overflow-hidden bg-[#071D25] text-white">
+    <section ref={shellRef} className="relative min-h-[92svh] overflow-hidden bg-[#071D25] text-white sm:min-h-screen">
       <div ref={imageRef} className="absolute inset-0">
         <Image
           key={slide.image}
@@ -51,16 +51,16 @@ export function Hero({ slides, whatsappHref }: HeroProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
         />
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,24,31,0.86)_0%,rgba(4,24,31,0.54)_46%,rgba(4,24,31,0.26)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,24,31,0.28)_0%,rgba(4,24,31,0.1)_48%,rgba(4,24,31,0.86)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,24,31,0.82)_0%,rgba(4,24,31,0.56)_48%,rgba(4,24,31,0.28)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,24,31,0.18)_0%,rgba(4,24,31,0.18)_40%,rgba(4,24,31,0.92)_100%)]" />
 
-      <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+      <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-8 sm:py-5 lg:px-10">
         <a href="#home" className="flex items-center gap-3" aria-label="SummerTrip NTB">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-[#073B4C] shadow-lg">
-            <Sparkles size={19} />
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#073B4C] shadow-lg sm:h-11 sm:w-11">
+            <Sparkles size={18} />
           </span>
           <span>
             <span className="block text-base font-black leading-none tracking-tight">SummerTrip</span>
@@ -82,40 +82,41 @@ export function Hero({ slides, whatsappHref }: HeroProps) {
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#073B4C] shadow-xl shadow-black/10 transition hover:bg-[#F7E6C8] sm:inline-flex"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#073B4C] shadow-xl shadow-black/10 transition hover:bg-[#F7E6C8] sm:h-auto sm:w-auto sm:gap-2 sm:px-5 sm:py-3 sm:text-sm sm:font-bold"
+          aria-label="Chat via WhatsApp"
         >
           <MessageCircle size={17} />
-          WhatsApp
+          <span className="hidden sm:inline">WhatsApp</span>
         </a>
       </header>
 
-      <div id="home" className="relative z-10 mx-auto flex min-h-[calc(100vh-5.5rem)] max-w-7xl items-center px-5 pb-16 pt-20 sm:px-8 lg:px-10">
+      <div id="home" className="relative z-10 mx-auto flex min-h-[calc(92svh-4.75rem)] max-w-7xl items-end px-4 pb-10 pt-16 sm:min-h-[calc(100vh-5.5rem)] sm:items-center sm:px-8 sm:pb-16 sm:pt-20 lg:px-10">
         <div className="max-w-3xl">
-          <div className="hero-copy mb-6 inline-flex items-center gap-3 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white/82 backdrop-blur-md">
+          <div className="hero-copy mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/18 bg-white/10 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/82 backdrop-blur-md sm:mb-6 sm:gap-3 sm:px-4 sm:text-xs sm:tracking-[0.22em]">
             <ShieldCheck size={15} className="text-[#F4A261]" />
             {slide.label}
           </div>
-          <h1 className="hero-copy max-w-4xl font-display text-5xl font-black leading-[0.96] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+          <h1 className="hero-copy max-w-4xl font-display text-4xl font-black leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
             {slide.title}
           </h1>
-          <p className="hero-copy mt-6 max-w-xl text-base leading-8 text-white/76 sm:text-lg">
+          <p className="hero-copy mt-5 max-w-xl text-sm leading-7 text-white/78 sm:mt-6 sm:text-lg sm:leading-8">
             Private island routes, refined local hosts, and effortless WhatsApp booking across Lombok,
             Gili, Mandalika, Rinjani, and Sumbawa.
           </p>
 
-          <div className="hero-copy mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="hero-copy mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <a
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-[#F4A261] px-7 py-4 text-sm font-black text-[#071D25] shadow-2xl shadow-[#F4A261]/25 transition hover:bg-[#FFD29B]"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#F4A261] px-7 py-4 text-sm font-black text-[#071D25] shadow-2xl shadow-[#F4A261]/25 transition hover:bg-[#FFD29B] sm:w-auto"
             >
               <MessageCircle size={18} />
               Book via WhatsApp
             </a>
             <a
               href="#packages"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/24 bg-white/10 px-7 py-4 text-sm font-black text-white backdrop-blur-md transition hover:bg-white/18"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/24 bg-white/10 px-7 py-4 text-sm font-black text-white backdrop-blur-md transition hover:bg-white/18 sm:w-auto"
             >
               Explore Packages
               <ArrowRight size={18} />

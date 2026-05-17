@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '6281234567890'
+export const WHATSAPP_NUMBER = '6281946601273'
 
 export const whatsappMessage =
   'Halo SummerTrip, saya ingin konsultasi paket wisata NTB. Bisa bantu buatkan itinerary?'

@@ -12,15 +12,15 @@ type SectionHeadingProps = {
 export function SectionHeading({ eyebrow, title, description, align = 'left' }: SectionHeadingProps) {
   return (
     <Reveal
-      className={`mx-auto mb-9 max-w-2xl sm:mb-12 ${
+      className={`mx-auto mb-7 max-w-2xl sm:mb-12 ${
         align === 'center' ? 'text-center' : 'text-left'
       }`}
     >
-      <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#E9783F]">{eyebrow}</p>
-      <h2 className="mt-4 font-display text-4xl font-black leading-tight text-[#092A37] sm:text-5xl">
+      <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#E9783F] sm:text-xs sm:tracking-[0.28em]">{eyebrow}</p>
+      <h2 className="mt-3 font-display text-3xl font-black leading-tight text-[#092A37] sm:mt-4 sm:text-5xl">
         {title}
       </h2>
-      <p className="mt-4 text-base leading-7 text-[#617780]">{description}</p>
+      <p className="mt-3 text-sm leading-7 text-[#617780] sm:mt-4 sm:text-base">{description}</p>
     </Reveal>
   )
 }
