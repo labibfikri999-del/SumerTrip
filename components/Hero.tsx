@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
-import { ArrowRight, MessageCircle, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, MessageCircle, ShieldCheck } from 'lucide-react'
 import type { HeroSlide } from '../lib/travel-data'
 
 type HeroProps = {
@@ -58,16 +58,19 @@ export function Hero({ slides, whatsappHref }: HeroProps) {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,24,31,0.18)_0%,rgba(4,24,31,0.18)_40%,rgba(4,24,31,0.92)_100%)]" />
 
       <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-8 sm:py-5 lg:px-10">
-        <a href="#home" className="flex items-center gap-3" aria-label="SummerTrip NTB">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#073B4C] shadow-lg sm:h-11 sm:w-11">
-            <Sparkles size={18} />
-          </span>
-          <span>
-            <span className="block text-base font-black leading-none tracking-tight">SummerTrip</span>
-            <span className="mt-1 block text-[0.65rem] font-bold uppercase tracking-[0.28em] text-white/64">
-              NTB Travel
-            </span>
-          </span>
+        <a
+          href="#home"
+          className="flex h-14 w-[154px] items-center overflow-hidden rounded-[1.2rem] border border-white/18 bg-white/92 px-2 shadow-xl shadow-black/12 backdrop-blur-md transition hover:bg-white sm:h-16 sm:w-[190px] sm:px-3"
+          aria-label="Summer Trip"
+        >
+          <Image
+            src="/images/summer-trip-logo.svg"
+            alt="Summer Trip"
+            width={680}
+            height={260}
+            priority
+            className="h-auto w-[122%] max-w-none"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.24em] text-white/70 lg:flex">
