@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8F5EF;
+  --foreground: #092A37;
+  --ocean: #0E5A71;
+  --green: #138A72;
+  --sand: #F7E6C8;
+  --sunset: #F4A261;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--sunset);
+  color: #071D25;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+.ntb-swiper .swiper-button-prev,
+.ntb-swiper .swiper-button-next {
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0E5A71;
+  box-shadow: 0 16px 34px rgba(9, 42, 55, 0.12);
+}
+
+.ntb-swiper .swiper-button-prev::after,
+.ntb-swiper .swiper-button-next::after {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.ntb-swiper .swiper-pagination-bullet {
+  background: #0E5A71;
+  opacity: 0.22;
+}
+
+.ntb-swiper .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 999px;
+  background: #F4A261;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .ntb-swiper .swiper-button-prev,
+  .ntb-swiper .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 768px) {
+  .hero-stats {
+    display: none;
+  }
+}
