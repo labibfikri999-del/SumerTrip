@@ -35,9 +35,9 @@ export function Footer({ whatsappHref }: FooterProps) {
             <MessageCircle size={18} className="text-[#F4A261]" />
             Book via WhatsApp
           </a>
-          <a href="mailto:hello@summertrip.example" className="flex items-center gap-3 transition hover:text-white">
+          <a href="mailto:summertrip.explore@gmail.com" className="flex items-center gap-3 transition hover:text-white">
             <Mail size={18} className="text-[#F4A261]" />
-            hello@summertrip.example
+            summertrip.explore@gmail.com
           </a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-white">
             <Camera size={18} className="text-[#F4A261]" />
