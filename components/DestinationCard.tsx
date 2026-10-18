@@ -2,47 +2,55 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowUpRight, MapPin } from 'lucide-react'
 import type { Destination } from '../lib/travel-data'
+import { cn } from '../lib/cn'
+import { Chip } from './ui/Chip'
 
 type DestinationCardProps = {
   destination: Destination
+  featured?: boolean
+  className?: string
+  index?: number
 }
 
-export function DestinationCard({ destination }: DestinationCardProps) {
+export function DestinationCard({ destination, featured, className, index = 0 }: DestinationCardProps) {
   return (
-    <motion.article
-      className="group h-full overflow-hidden rounded-[1.35rem] bg-white shadow-xl shadow-[#092A37]/8 sm:relative sm:h-[440px] sm:rounded-[2rem] sm:bg-[#092A37]"
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.3 }}
+    <motion.a
+      href={`#package-${destination.packageSlug}`}
+      className={cn('group relative block overflow-hidden rounded-[1.25rem] bg-ink sm:rounded-[1.75rem]', className)}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6, delay: (index % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="relative h-56 overflow-hidden sm:absolute sm:inset-0 sm:h-auto">
-        <Image
-          src={destination.image}
-          alt={destination.title}
-          fill
-          sizes="(min-width: 1024px) 360px, 88vw"
-          className="object-cover transition duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="absolute inset-0 hidden bg-gradient-to-t from-[#061B23]/88 via-[#061B23]/24 to-transparent sm:block" />
-      <div className="relative p-5 text-[#092A37] sm:absolute sm:inset-x-0 sm:bottom-0 sm:p-7 sm:text-white">
-        <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#E9783F] sm:text-xs sm:tracking-[0.22em] sm:text-[#F7E6C8]">
-          {destination.tags[0]}
-        </p>
-        <h3 className="font-display text-3xl font-semibold leading-none sm:text-4xl">{destination.title}</h3>
-        <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#617780] sm:text-white/76">
-          <MapPin size={15} />
+      <Image
+        src={destination.image}
+        alt={destination.title}
+        fill
+        sizes={featured ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 50vw'}
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/90 via-ink-deep/20 to-transparent" />
+
+      <Chip className="absolute left-3 top-3 sm:left-4 sm:top-4">{destination.tags[0]}</Chip>
+      <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white text-ink transition duration-300 group-hover:rotate-45 group-hover:bg-sunset sm:right-4 sm:top-4 sm:h-10 sm:w-10">
+        <ArrowUpRight size={17} />
+      </span>
+
+      <div className="absolute inset-x-0 bottom-0 p-3.5 text-white sm:p-5">
+        <h3 className={cn('font-display font-semibold leading-none', featured ? 'text-3xl sm:text-5xl' : 'text-xl sm:text-2xl')}>
+          {destination.title}
+        </h3>
+        <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-white/75 sm:text-sm">
+          <MapPin size={13} />
           {destination.area}
         </p>
-        <a
-          href="#packages"
-          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#092A37] px-5 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:bg-[#0E5A71] sm:mt-6 sm:w-auto sm:bg-white sm:text-[#092A37] sm:hover:bg-[#F7E6C8]"
-        >
-          View trips
-          <ArrowRight size={16} />
-        </a>
+        {featured && <p className="mt-3 hidden max-w-md text-sm leading-6 text-white/75 sm:block">{destination.description}</p>}
+        <p className="grid grid-rows-[0fr] text-sm leading-6 text-white/75 transition-all duration-500 group-hover:grid-rows-[1fr] max-sm:hidden">
+          <span className={cn('overflow-hidden', featured && 'hidden')}>{destination.description}</span>
+        </p>
       </div>
-    </motion.article>
+    </motion.a>
   )
 }

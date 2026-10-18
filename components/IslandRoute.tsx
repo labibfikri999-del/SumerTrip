@@ -89,7 +89,7 @@ export function IslandRoute() {
     }
   }, [])
 
-  const routeMessage = `Halo SummerTrip, saya tertarik dengan rute island-hopping 5 hari (${islandRoute.map((s) => s.place).join(' → ')}). Bisa cek ketersediaan dan harganya?`
+  const routeMessage = `Hi SummerTrip, I'm interested in the 5-day island-hopping route (${islandRoute.map((s) => s.place).join(' → ')}). Could you check availability and price?`
 
   return (
     <section id="route" className="bg-sand-50 px-2 py-10 sm:px-3 sm:py-16">

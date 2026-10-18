@@ -1,4 +1,5 @@
 import { ArrowRight, Camera, Mail, MapPin, MessageCircle } from 'lucide-react'
+import { CONTACT_EMAIL, INSTAGRAM_URL } from '../lib/travel-data'
 
 type FooterProps = {
   whatsappHref: string
@@ -35,13 +36,13 @@ export function Footer({ whatsappHref }: FooterProps) {
             <MessageCircle size={18} className="text-[#F4A261]" />
             Book via WhatsApp
           </a>
-          <a href="mailto:summertrip.explore@gmail.com" className="flex items-center gap-3 transition hover:text-white">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-3 transition hover:text-white">
             <Mail size={18} className="text-[#F4A261]" />
-            summertrip.explore@gmail.com
+            {CONTACT_EMAIL}
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-white">
+          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 transition hover:text-white">
             <Camera size={18} className="text-[#F4A261]" />
-            Instagram
+            @summertrip.explore
           </a>
         </div>
       </div>

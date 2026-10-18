@@ -1,7 +1,10 @@
 export const WHATSAPP_NUMBER = '6285925586847'
 
+export const INSTAGRAM_URL = 'https://www.instagram.com/summertrip.explore/'
+export const CONTACT_EMAIL = 'summertrip.explore@gmail.com'
+
 export const whatsappMessage =
-  'Halo SummerTrip, saya ingin konsultasi paket wisata NTB. Bisa bantu buatkan itinerary?'
+  "Hi SummerTrip, I'd like to plan a trip in NTB. Could you help me with an itinerary?"
 
 export function whatsappUrl(message = whatsappMessage) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
@@ -17,6 +20,7 @@ export type HeroSlide = {
 
 export type Destination = {
   title: string
+  packageSlug: string
   area: string
   description: string
   image: string
@@ -24,6 +28,7 @@ export type Destination = {
 }
 
 export type TravelPackage = {
+  slug: string
   title: string
   duration: string
   location: string
@@ -160,6 +165,7 @@ export const islandRoute: RouteStop[] = [
 export const destinations: Destination[] = [
   {
     title: 'Lombok',
+    packageSlug: 'lombok-family',
     area: 'South Coast to Senaru',
     description: 'A complete island route with surf beaches, Sasak villages, waterfalls, and quiet bays.',
     image: '/images/ntb/lombok-culture.webp',
@@ -167,6 +173,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Gili Trawangan',
+    packageSlug: 'three-gili',
     area: 'Northwest Lombok',
     description: 'Sunset cycling, beach clubs, turtle points, and easy island nights without cars.',
     image: '/images/ntb/gili-trawangan.webp',
@@ -174,6 +181,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Gili Air',
+    packageSlug: 'three-gili',
     area: 'Gili Islands',
     description: 'Balanced island energy with calm beaches, clear water, and family-friendly stays.',
     image: '/images/ntb/gili-air-meno.webp',
@@ -181,6 +189,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Gili Meno',
+    packageSlug: 'three-gili',
     area: 'Gili Islands',
     description: 'Quiet beaches, honeymoon villas, turtle sanctuary stops, and underwater statues.',
     image: '/images/ntb/gili-air-meno.webp',
@@ -188,6 +197,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Mandalika',
+    packageSlug: 'lombok-family',
     area: 'Kuta Lombok',
     description: 'Modern coastal escape with Merese Hill, Tanjung Aan, surf breaks, and luxury resorts.',
     image: '/images/ntb/hero-mandalika.webp',
@@ -195,6 +205,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Pink Beach',
+    packageSlug: 'private-ntb',
     area: 'East Lombok',
     description: 'Soft rose sand, hidden reefs, boat picnics, and remote coastal scenery.',
     image: '/images/ntb/pink-beach.webp',
@@ -202,6 +213,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Mount Rinjani',
+    packageSlug: 'rinjani-trek',
     area: 'Sembalun & Senaru',
     description: 'Volcano trekking, crater lake views, soft trekking options, and sunrise ridgelines.',
     image: '/images/ntb/rinjani-trekking.webp',
@@ -209,6 +221,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Sumbawa',
+    packageSlug: 'sumbawa-moyo',
     area: 'West Nusa Tenggara',
     description: 'Wild beaches, surf coast, whale shark routes, and expansive island landscapes.',
     image: '/images/ntb/sumbawa-coast.webp',
@@ -216,6 +229,7 @@ export const destinations: Destination[] = [
   },
   {
     title: 'Moyo Island',
+    packageSlug: 'sumbawa-moyo',
     area: 'Sumbawa Besar',
     description: 'Waterfalls, forest walks, blue coves, and an off-grid luxury island atmosphere.',
     image: '/images/ntb/moyo-waterfall.webp',
@@ -225,6 +239,7 @@ export const destinations: Destination[] = [
 
 export const packages: TravelPackage[] = [
   {
+    slug: 'three-gili',
     title: 'Three Gili Snorkeling Escape',
     duration: 'Full Day',
     location: 'Gili Trawangan, Meno, Air',
@@ -235,6 +250,7 @@ export const packages: TravelPackage[] = [
     inclusions: ['Hotel transfer', 'Boat & guide', 'Snorkeling gear'],
   },
   {
+    slug: 'lombok-family',
     title: 'Lombok Family Beach Tour',
     duration: '2 Days 1 Night',
     location: 'Mandalika, Sade, Merese',
@@ -245,6 +261,7 @@ export const packages: TravelPackage[] = [
     inclusions: ['Private car', 'Local guide', 'Flexible stops'],
   },
   {
+    slug: 'rinjani-trek',
     title: 'Rinjani Soft Trekking',
     duration: '2 Days 1 Night',
     location: 'Senaru or Sembalun',
@@ -255,6 +272,7 @@ export const packages: TravelPackage[] = [
     inclusions: ['Guide & porter', 'Meals', 'Permit support'],
   },
   {
+    slug: 'sumbawa-moyo',
     title: 'Sumbawa Whale Shark & Moyo',
     duration: '3 Days 2 Nights',
     location: 'Saleh Bay, Moyo Island',
@@ -265,6 +283,7 @@ export const packages: TravelPackage[] = [
     inclusions: ['Island transport', 'Boat charter', 'Local host'],
   },
   {
+    slug: 'private-ntb',
     title: 'Private NTB Luxury Route',
     duration: 'Custom 4-7 Days',
     location: 'Lombok, Gili, Sumbawa',
@@ -275,6 +294,7 @@ export const packages: TravelPackage[] = [
     inclusions: ['Concierge planning', 'Private driver', 'VIP route design'],
   },
   {
+    slug: 'rental-car',
     title: 'Rental Car with Driver',
     duration: 'Daily',
     location: 'Lombok & Mandalika',
@@ -342,27 +362,40 @@ export const testimonials: Testimonial[] = [
 
 export const faqs: Faq[] = [
   {
-    question: 'Apakah paket bisa dibuat private?',
-    answer: 'Bisa. Hampir semua paket bisa dibuat private dengan jadwal, rute, dan tempo perjalanan yang disesuaikan dengan kebutuhan tamu.',
+    question: 'Can any package be made private?',
+    answer: 'Yes. Almost every package can run as a private trip, with the schedule, route, and pace shaped around your group.',
   },
   {
-    question: 'Bagaimana cara booking?',
-    answer: 'Pilih paket atau isi Trip Planner di atas, lalu kirim pesan lewat WhatsApp. Kami akan membalas dengan itinerary, harga final, dan detail pembayaran sebelum trip dikonfirmasi.',
+    question: 'How do I book?',
+    answer: 'Pick a package or fill in the Trip Planner above, then send us a WhatsApp message. We reply with your itinerary, final price, and payment details before the trip is confirmed.',
   },
   {
-    question: 'Apakah ada pickup dari airport?',
-    answer: 'Ada. Kami bisa menjemput dari Lombok International Airport, hotel Kuta, Senggigi, Mataram, Bangsal, atau Teluk Nare.',
+    question: 'Do you offer airport pickup?',
+    answer: 'Yes. We pick up from Lombok International Airport and hotels in Kuta, Senggigi, and Mataram, as well as Bangsal and Teluk Nare harbors.',
   },
   {
-    question: 'Apakah trip aman untuk keluarga?',
-    answer: 'Ya. Family Trip dibuat dengan pacing santai, pilihan kendaraan nyaman, dan destinasi yang aman untuk anak.',
+    question: 'Are the trips family friendly?',
+    answer: 'Yes. Family trips run at a relaxed pace, with comfortable vehicles and destinations that are safe for children.',
   },
   {
-    question: 'Bagaimana jika cuaca laut kurang baik?',
-    answer: 'Kami akan menyarankan reschedule, rute alternatif, atau opsi refund sesuai kondisi paket. Keselamatan selalu prioritas.',
+    question: 'What happens if the sea is too rough?',
+    answer: 'We will suggest a new date, an alternative route, or a refund depending on the package. Safety always comes first.',
   },
   {
-    question: 'Apakah harga sudah termasuk semua?',
-    answer: 'Setiap paket punya inclusion yang jelas. Detail final seperti tiket masuk, makan, dan transport akan dikonfirmasi lewat WhatsApp.',
+    question: 'Is everything included in the price?',
+    answer: 'Each package lists what is included. Final details such as entrance tickets, meals, and transport are confirmed on WhatsApp.',
   },
+]
+
+export const whyUs = [
+  { title: 'Local NTB hosts', description: 'Guides from Lombok and Sumbawa who know the quiet spots and the right time to visit them.' },
+  { title: 'Private & flexible', description: 'Your pace, your stops. Every route can be shortened, extended, or made private.' },
+  { title: 'Door-to-door transfers', description: 'Airport, hotel, and harbor pickups, with boats and ferries arranged for you.' },
+  { title: 'Clear pricing', description: 'Inclusions listed up front, and the final price confirmed on WhatsApp before you pay.' },
+]
+
+export const bookingSteps = [
+  { title: 'Pick a trip', description: 'Choose a package or tell us your dates in the Trip Planner.' },
+  { title: 'Chat on WhatsApp', description: 'We reply with an itinerary and the final price for your group.' },
+  { title: 'Confirm & go', description: 'Confirm your booking and we handle pickups, boats, and guides.' },
 ]

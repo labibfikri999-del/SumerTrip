@@ -74,11 +74,11 @@ export function TripPlanner({ className }: { className?: string }) {
 
   const guests = `${adults} adult${adults > 1 ? 's' : ''}${children ? `, ${children} child${children > 1 ? 'ren' : ''}` : ''}`
   const message = [
-    'Halo SummerTrip, saya ingin rencanakan trip:',
-    `• Destinasi: ${destination ?? 'belum ditentukan'}`,
-    `• Tanggal: ${range?.from ? formatRange(range) : 'fleksibel'}`,
-    `• Tamu: ${guests}`,
-    'Bisa bantu buatkan itinerary dan harganya?',
+    "Hi SummerTrip, I'd like to plan a trip:",
+    `• Destination: ${destination ?? 'not decided yet'}`,
+    `• Dates: ${range?.from ? formatRange(range) : 'flexible'}`,
+    `• Guests: ${guests}`,
+    'Could you send me an itinerary and price?',
   ].join('\n')
 
   return (

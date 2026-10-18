@@ -7,6 +7,7 @@ import { IslandRoute } from '../components/IslandRoute'
 import { PackagesSection } from '../components/PackagesSection'
 import { StickyBooking } from '../components/StickyBooking'
 import { Testimonials } from '../components/Testimonials'
+import { WhyUs } from '../components/WhyUs'
 import {
   destinations,
   faqs,
@@ -26,6 +27,7 @@ export default function Home() {
       <DestinationCarousel destinations={destinations} />
       <IslandRoute />
       <PackagesSection packages={packages} />
+      <WhyUs whatsappHref={bookingHref} />
       <Gallery images={gallery} />
       <Testimonials testimonials={testimonials} />
       <FAQ faqs={faqs} />

@@ -1,7 +1,6 @@
 'use client'
 
-import { Navigation, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useEffect } from 'react'
 import type { TravelPackage } from '../lib/travel-data'
 import { PackageCard } from './PackageCard'
 import { SectionHeading } from './SectionHeading'
@@ -11,33 +10,36 @@ type PackagesSectionProps = {
 }
 
 export function PackagesSection({ packages }: PackagesSectionProps) {
+  // On mobile the cards sit in a horizontal scroller, so bring the linked card into view sideways too.
+  useEffect(() => {
+    const reveal = () => {
+      if (!window.location.hash.startsWith('#package-')) return
+      document.querySelector(window.location.hash)?.scrollIntoView({ inline: 'center', block: 'nearest' })
+    }
+    reveal()
+    window.addEventListener('hashchange', reveal)
+    return () => window.removeEventListener('hashchange', reveal)
+  }, [])
+
   return (
-    <section id="packages" className="bg-white px-4 py-12 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+    <section id="packages" className="bg-sand-50 py-12 sm:px-8 sm:py-20 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Travel packages"
-          title="Signature trips, ready to book"
-          description="Private, flexible, and locally guided packages with clear pricing and direct WhatsApp confirmation."
+          title="Signature trips,"
+          accent="ready to book"
+          description="Private, flexible, and locally guided. Every package shows what is included, with the final price confirmed on WhatsApp."
+          className="px-4 sm:px-0"
         />
 
-        <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={14}
-          slidesPerView={1.02}
-          breakpoints={{
-            720: { slidesPerView: 2, spaceBetween: 20 },
-            1180: { slidesPerView: 3, spaceBetween: 24 },
-          }}
-          className="ntb-swiper !overflow-visible !pb-12 sm:!overflow-hidden sm:!pb-14"
-        >
-          {packages.map((item) => (
-            <SwiperSlide key={item.title} className="!h-auto">
-              <PackageCard item={item} />
-            </SwiperSlide>
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 lg:gap-6 [&::-webkit-scrollbar]:hidden">
+          {packages.map((item, index) => (
+            <div key={item.slug} className="w-[84%] shrink-0 snap-center sm:w-auto">
+              <PackageCard item={item} index={index} />
+            </div>
           ))}
-        </Swiper>
+        </div>
+        <p className="mt-2 px-4 text-center text-xs font-semibold text-ink-soft sm:hidden">Swipe to see all {packages.length} trips →</p>
       </div>
     </section>
   )

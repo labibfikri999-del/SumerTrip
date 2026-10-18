@@ -24,14 +24,14 @@ export function StickyBooking({ whatsappHref }: StickyBookingProps) {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-3 text-xs font-black text-white"
           >
             <MapPinned size={16} />
-            Rute
+            Explore
           </a>
           <a
             href="#packages"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-3 text-xs font-black text-white"
           >
             <CalendarCheck size={16} />
-            Paket
+            Packages
           </a>
           <a
             href={whatsappHref}
@@ -40,7 +40,7 @@ export function StickyBooking({ whatsappHref }: StickyBookingProps) {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#F4A261] px-3 py-3 text-xs font-black text-[#071D25]"
           >
             <MessageCircle size={16} />
-            Chat WA
+            WhatsApp
           </a>
         </div>
       </div>
