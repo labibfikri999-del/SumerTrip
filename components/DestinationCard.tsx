@@ -30,7 +30,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
         <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#E9783F] sm:text-xs sm:tracking-[0.22em] sm:text-[#F7E6C8]">
           {destination.tags[0]}
         </p>
-        <h3 className="font-display text-3xl font-black leading-none sm:text-4xl">{destination.title}</h3>
+        <h3 className="font-display text-3xl font-semibold leading-none sm:text-4xl">{destination.title}</h3>
         <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#617780] sm:text-white/76">
           <MapPin size={15} />
           {destination.area}

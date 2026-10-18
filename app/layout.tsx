@@ -1,12 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import localFont from 'next/font/local'
+import { Instrument_Serif, Plus_Jakarta_Sans } from 'next/font/google'
+import { SmoothScroll } from '../components/SmoothScroll'
+import 'lenis/dist/lenis.css'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' })
+const instrument = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-instrument',
+})
+const clash = localFont({
+  src: [
+    { path: './fonts/ClashDisplay-Medium.woff2', weight: '500' },
+    { path: './fonts/ClashDisplay-Semibold.woff2', weight: '600' },
+    { path: './fonts/ClashDisplay-Bold.woff2', weight: '700' },
+  ],
+  variable: '--font-clash',
+})
 
 export const metadata: Metadata = {
   title: 'SummerTrip NTB | Lombok, Gili, Sumbawa Travel Experiences',
@@ -20,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="bg-[#F8F5EF] text-[#092A37] antialiased selection:bg-[#F4A261] selection:text-[#071D25]">
-        {children}
+    <html lang="en" className={`${jakarta.variable} ${instrument.variable} ${clash.variable}`}>
+      <body className="bg-sand-50 font-sans text-ink antialiased selection:bg-sunset selection:text-ink">
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   )

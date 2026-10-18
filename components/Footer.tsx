@@ -10,7 +10,7 @@ export function Footer({ whatsappHref }: FooterProps) {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#F4A261]">SummerTrip NTB</p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-black leading-tight sm:mt-4 sm:text-5xl">
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-semibold leading-tight sm:mt-4 sm:text-5xl">
             Design your NTB escape.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/68 sm:mt-5 sm:text-base sm:leading-8">

@@ -22,10 +22,6 @@ body {
   color: #071D25;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 img {
   -webkit-user-drag: none;
 }
@@ -69,4 +65,8 @@ img {
   .hero-stats {
     display: none;
   }
+}
+
+.font-display {
+  word-spacing: 0.06em;
 }

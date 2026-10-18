@@ -3,6 +3,7 @@ import { FAQ } from '../components/FAQ'
 import { Footer } from '../components/Footer'
 import { Gallery } from '../components/Gallery'
 import { Hero } from '../components/Hero'
+import { IslandRoute } from '../components/IslandRoute'
 import { PackagesSection } from '../components/PackagesSection'
 import { StickyBooking } from '../components/StickyBooking'
 import { Testimonials } from '../components/Testimonials'
@@ -20,9 +21,10 @@ export default function Home() {
   const bookingHref = whatsappUrl()
 
   return (
-    <main className="overflow-x-hidden bg-[#F8F5EF] pb-20 md:pb-0">
+    <main className="overflow-x-clip bg-sand-50 pb-20 md:pb-0">
       <Hero slides={heroSlides} whatsappHref={bookingHref} />
       <DestinationCarousel destinations={destinations} />
+      <IslandRoute />
       <PackagesSection packages={packages} />
       <Gallery images={gallery} />
       <Testimonials testimonials={testimonials} />

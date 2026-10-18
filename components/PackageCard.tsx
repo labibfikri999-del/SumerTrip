@@ -29,7 +29,7 @@ export function PackageCard({ item }: PackageCardProps) {
       <div className="absolute inset-0 hidden bg-gradient-to-t from-[#061B23]/94 via-[#061B23]/28 to-transparent sm:block" />
       <div className="relative p-5 text-[#092A37] sm:absolute sm:inset-x-0 sm:bottom-0 sm:p-7 sm:text-white">
         <p className="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#E9783F] sm:text-xs sm:tracking-[0.22em] sm:text-[#F4A261]">{item.badge}</p>
-        <h3 className="font-display text-[1.9rem] font-black leading-[1.02] sm:text-4xl sm:leading-[0.98]">{item.title}</h3>
+        <h3 className="font-display text-[1.9rem] font-semibold leading-[1.02] sm:text-4xl sm:leading-[0.98]">{item.title}</h3>
         <p className="mt-4 text-sm leading-6 text-[#617780] sm:hidden">{item.description}</p>
         <div className="mt-5 grid gap-2 text-sm font-semibold text-[#617780] sm:text-white/76">
           <span className="flex items-center gap-2">

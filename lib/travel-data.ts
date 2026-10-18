@@ -9,7 +9,9 @@ export function whatsappUrl(message = whatsappMessage) {
 
 export type HeroSlide = {
   title: string
+  accent: string
   label: string
+  place: string
   image: string
 }
 
@@ -52,19 +54,106 @@ export type Faq = {
 
 export const heroSlides: HeroSlide[] = [
   {
-    title: 'Discover Lombok, Gili & Sumbawa',
+    title: 'Discover Lombok, Gili &',
+    accent: 'Sumbawa',
     label: 'Premium NTB Island Experiences',
+    place: 'Rinjani',
     image: '/images/ntb/hero-rinjani.webp',
   },
   {
-    title: 'Explore the Beauty of Nusa Tenggara Barat',
+    title: 'Island days in the',
+    accent: 'Three Gilis',
     label: 'Private Trips, Snorkeling, Culture',
+    place: 'Gili Islands',
     image: '/images/ntb/hero-gili.webp',
   },
   {
-    title: 'Mandalika Sunsets & Rinjani Mornings',
+    title: 'Mandalika sunsets &',
+    accent: 'slow mornings',
     label: 'Curated by Local NTB Hosts',
+    place: 'Mandalika',
     image: '/images/ntb/hero-mandalika.webp',
+  },
+]
+
+// Ganti angka-angka ini dengan data asli SummerTrip sebelum website live.
+export const trustStats = {
+  rating: '4.9',
+  ratingLabel: 'Google rating',
+  guests: '500+',
+  guestsLabel: 'happy travelers',
+}
+
+export const heroHighlights = [
+  { label: 'Snorkeling', place: 'Gili Trawangan' },
+  { label: 'Sunrise trek', place: 'Rinjani' },
+  { label: 'Boat picnic', place: 'Pink Beach' },
+]
+
+export const trustBadges = ['Hotel & airport pickup', 'Private & flexible routes', 'Local NTB guides', 'Book & confirm via WhatsApp']
+
+export const plannerDestinations = [
+  'Gili Islands',
+  'Lombok & Mandalika',
+  'Mount Rinjani',
+  'Pink Beach',
+  'Sumbawa & Moyo',
+  'Custom NTB route',
+]
+
+export type RouteStop = {
+  day: string
+  title: string
+  place: string
+  description: string
+  image: string
+  transport?: 'boat' | 'car' | 'ferry'
+  transportLabel?: string
+}
+
+export const islandRoute: RouteStop[] = [
+  {
+    day: 'Day 1',
+    title: 'Arrive in Lombok',
+    place: 'Mataram & Sade',
+    description: 'Airport pickup, Sasak village walk, and a slow dinner by Senggigi.',
+    image: '/images/ntb/lombok-culture.webp',
+    transport: 'boat',
+    transportLabel: 'Fast boat · 45 min',
+  },
+  {
+    day: 'Day 2',
+    title: 'Snorkel the Gilis',
+    place: 'Gili Trawangan',
+    description: 'Turtle points, underwater statues, and sunset on the west coast.',
+    image: '/images/ntb/gili-trawangan.webp',
+    transport: 'car',
+    transportLabel: 'Private car · 2 hr',
+  },
+  {
+    day: 'Day 3',
+    title: 'Mandalika coast',
+    place: 'Kuta Lombok',
+    description: 'Tanjung Aan, Merese Hill sunset, and the surf beaches of the south.',
+    image: '/images/ntb/hero-mandalika.webp',
+    transport: 'boat',
+    transportLabel: 'Boat trip · 1 hr',
+  },
+  {
+    day: 'Day 4',
+    title: 'Pink Beach picnic',
+    place: 'East Lombok',
+    description: 'Rose sand, hidden reefs, and a private boat lunch between islets.',
+    image: '/images/ntb/pink-beach.webp',
+    transport: 'ferry',
+    transportLabel: 'Ferry · 2 hr',
+  },
+  {
+    day: 'Day 5',
+    title: 'Wild Sumbawa',
+    place: 'Moyo Island',
+    description: 'Forest trails, turquoise waterfalls, and quiet off-grid coves.',
+    image: '/images/ntb/moyo-waterfall.webp',
   },
 ]
 
