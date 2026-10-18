@@ -346,8 +346,8 @@ export const faqs: Faq[] = [
     answer: 'Bisa. Hampir semua paket bisa dibuat private dengan jadwal, rute, dan tempo perjalanan yang disesuaikan dengan kebutuhan tamu.',
   },
   {
-    question: 'Nomor WhatsApp bisa diganti?',
-    answer: 'Bisa. Ganti nilai WHATSAPP_NUMBER di file lib/travel-data.ts, semua tombol booking akan otomatis memakai nomor baru.',
+    question: 'Bagaimana cara booking?',
+    answer: 'Pilih paket atau isi Trip Planner di atas, lalu kirim pesan lewat WhatsApp. Kami akan membalas dengan itinerary, harga final, dan detail pembayaran sebelum trip dikonfirmasi.',
   },
   {
     question: 'Apakah ada pickup dari airport?',
